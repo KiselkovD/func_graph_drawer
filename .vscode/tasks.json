@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "git automated commit",
+			"type": "shell",
+			"command": [
+				// list of commands
+				"git add . \n",
+				"git commit -m 'Automated commit'  \n",
+				"git push \n"
+			]
+		},
+		{
+			"label": "build",
+			"type": "shell",
+			"command": [
+				// list of commands
+				"vcpkg install sdl2:x86-windows-static sdl2:x64-windows-static\n",
+				"cd C:/_documents/my_project/programming/cpp/func_graph_drawer/build \n",
+				"cmake .. -DCMAKE_BUILD_TYPE=Debug \n",
+				"cmake --build . \n",
+				"cd C:/_documents/my_project/programming/cpp/func_graph_drawer"
+			]
+		},
+		{
+			"label": "run",
+			"type": "shell",
+			"command": [
+				// list of commands
+				"C:/_documents/my_project/programming/cpp/func_graph_drawer/build/Debug/func_graph_drawer.exe"
+			]
+		}
+	]
+}
