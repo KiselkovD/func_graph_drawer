@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 3.22)
 project(func_graph_drawer LANGUAGES CXX)
 
 # vcpkg path
-set(CMAKE_TOOLCHAIN_FILE "C:/_PORTABLE/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+set(CMAKE_TOOLCHAIN_FILE "vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
 
 # SDL2 path
-list(APPEND CMAKE_PREFIX_PATH "C:/_PORTABLE/vcpkg/installed/x64-windows-static/share/sdl2")
+list(APPEND CMAKE_PREFIX_PATH "vcpkg/installed/x64-windows-static/share/sdl2")
 
 find_package(SDL2 CONFIG REQUIRED)
 

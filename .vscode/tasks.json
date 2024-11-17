@@ -2,13 +2,33 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "git submodule",
+			"type": "shell",
+			"command": [
+				// list of commands
+				//"git submodule add https:// \n",
+				"git submodule init \n",
+				"git submodule update \n",
+				"git submodule status \n"
+			]
+		},
+		{
 			"label": "git automated commit",
 			"type": "shell",
 			"command": [
 				// list of commands
 				"git add . \n",
-				"git commit -m 'Automated commit'  \n",
+				"git commit -m 'Automated commit' \n",
 				"git push \n"
+			]
+		},
+		{
+			"label": "install vcpkg & sdl2",
+			"type": "shell",
+			"command": [
+				// list of commands
+				"vcpkg/bootstrap-vcpkg.bat \n",
+				"vcpkg/vcpkg install sdl2:x86-windows-static sdl2:x64-windows-static \n"
 			]
 		},
 		{
@@ -16,11 +36,10 @@
 			"type": "shell",
 			"command": [
 				// list of commands
-				"vcpkg install sdl2:x86-windows-static sdl2:x64-windows-static\n",
-				"cd C:/_documents/my_project/programming/cpp/func_graph_drawer/build \n",
+				"cd build \n",
 				"cmake .. -DCMAKE_BUILD_TYPE=Debug \n",
 				"cmake --build . \n",
-				"cd C:/_documents/my_project/programming/cpp/func_graph_drawer"
+				"cd .. \n"
 			]
 		},
 		{
@@ -28,7 +47,7 @@
 			"type": "shell",
 			"command": [
 				// list of commands
-				"C:/_documents/my_project/programming/cpp/func_graph_drawer/build/Debug/func_graph_drawer.exe"
+				"build/Debug/func_graph_drawer.exe \n"
 			]
 		}
 	]
